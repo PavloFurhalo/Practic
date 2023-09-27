@@ -9,20 +9,20 @@ while True:
         break
     
     try:
-        num = int(b)
+        b = int(b)
     except ValueError:
         print("It must be int or float")
         continue
 
-    if num >= 0:
-        a.append(num)
-    elif num < 0:
-        c.append(num)
+    if b >= 0:
+        a.append(b)
+    elif b < 0:
+        c.append(b)
 
-    if num % 2 == 0:
-        couples.append(num)
-    elif num % 2 != 0:
-        odd.append(num)
+    if b % 2 == 0:
+        couples.append(b)
+    elif b % 2 != 0:
+        odd.append(b)
 
 print(a)
 print(c)
