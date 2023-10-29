@@ -9,3 +9,5 @@ confirm.onclick = () => {
     const sum = Number(input1.value) + Number(input2.value)
     resultElement.textContent = `Результат: ${sum}`
 }
+
+
