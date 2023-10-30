@@ -1,19 +1,16 @@
-function showImages() {
-    const inputField = document.getElementById('input-field');
-    const imageContainer = document.getElementById('image-container');
-    const inputValue = inputField.value.toLowerCase(); // Перетворення на нижній регістр
+document.getElementById('go').addEventListener('click', function() {
+    const sourceText = document.getElementById('source-text').value;
+    const resultContainer = document.getElementById('result-text');
 
-    // Очищення контейнера перед вставкою нових картинок
-    imageContainer.innerHTML = '';
+    resultContainer.innerHTML = '';
 
-    for (let i = 0; i < inputValue.length; i++) {
-        const letter = inputValue[i];
-        
-        // Перевірка, чи є введене значення літерою
-        if (/^[a-zA-Z]$/.test(letter)) {
-            const image = document.createElement('img');
-            image.src = `${letter}.png`; // Припустимо, що ваші файли мають імена "a.png", "b.png", і так далі
-            imageContainer.appendChild(image);
-        }
+    for (let i = 0; i < sourceText.length; i++) {
+        const letter = sourceText[i].toLowerCase();
+        const isUpperCase = sourceText[i] === sourceText[i].toUpperCase();
+        const imageName = isUpperCase ? `${letter}.png` : `small_${letter}.png`;
+        const image = document.createElement('img');
+        image.src = `images/${imageName}`;
+        image.alt = letter;
+        resultContainer.appendChild(image);
     }
-}
+});
