@@ -1,0 +1,17 @@
+body{
+    background-color: grey;
+}
+
+.task1{
+    text-align: center;
+}
+
+.task2{
+    text-align: center;
+}
+
+button{
+    color: black;
+    background-color: aqua;
+    border-radius: 20px;
+}
